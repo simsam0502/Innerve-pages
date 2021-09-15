@@ -3285,6 +3285,25 @@ div {
     display: none !important;
 }
 
+@media screen and (max-width:400px){
+    .dotted_hide{
+        transform: scale(2);
+        top: 45%;
+        left: 35%;
+    }
+    
+    .white01{
+        transform: scale(1.9);
+        top: 45.5%;
+        left: 36%;
+    }
+    .orange01{
+        transform: scale(1.9);
+        top: 46.1%;
+        left: 36.6%;
+    }
+}  
+
 
 
 
