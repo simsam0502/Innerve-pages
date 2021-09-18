@@ -9,8 +9,26 @@ html, body{
     background-color: #DE5D83
     ;
 }
+
 body{
     margin: 0;
+    background-image: url("./bg.gif.gif");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body::before{
+    content: "";
+    display: block;
+    /*background-color: rgba(255,182,193,0.70);*/
+    background-color: rgba(255,255,255,0.60);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
 }
     
 img{
@@ -422,7 +440,7 @@ animation02
     margin: auto;
     width: 2.1vw;
     height: 2.1vw;
-    background-color:#FFF5EE;
+    background-color:#DE5D83;
     transform: rotate(45deg)
 }
 .rhombus_item01_wrapper{
@@ -496,6 +514,7 @@ animation02
     background: #FFF5EE;
     z-index: 3;
 }
+
 /*============
 dotted circle
 ============*/
@@ -517,7 +536,7 @@ dotted circle
 .dotted01{
     width: 30vw;
     height: 30vw;
-    border: dotted 0.5vw #FFF5EE;
+    border: dotted 0.5vw #DE5D83;
     z-index: 1;
     top: 50%;
     left: 50%;
@@ -587,7 +606,7 @@ white circle
 .white01{
     width: 29vw;
     height: 29vw;
-    background:#FFF5EE;
+    background:#DE5D83;
     z-index: 1;
     top: 50%;
     left: 50%;
@@ -625,7 +644,7 @@ white circle
     }
     100% {
         transform: rotate(-360deg);
-        background:#FFF5EE;
+        background:#DE5D83;
     }
 }
 /*============
@@ -691,7 +710,7 @@ orange circle
 .orange01{
     width: 27vw;
     height: 27vw;
-    background: #DE5D83;
+    background: #f7c8c2;
     z-index: 1;
     top: 50%;
     left: 50%;
@@ -712,10 +731,11 @@ orange circle
     left: -13.5vw;
     width: 27vw;
     height: 27vw;
-    background:#DE5D83;
+    background:#FFF5EE;
     transform-origin: right 13.5vw;
     animation: rotate-circle-left02 0.5s linear 5.3s forwards;
 }
+
 @keyframes rotate-circle-left02 {
     0%   {
         transform: rotate(0deg);
@@ -731,7 +751,7 @@ orange circle
     }
     100% {
         transform: rotate(-360deg);
-        background:#DE5D83;
+        background:#f7c8c2;
     }
 }
 
@@ -758,13 +778,15 @@ orange circle
     height: 30vw;
     animation: name 1.0s cubic-bezier(0.165, 0.84, 0.44, 1) 5.9s forwards;
     opacity: 0;
+    text-align: center;
+
 }
 .name p a{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color:#FFF5EE;
+    color:#DE5D83;
     font-size: 2rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     letter-spacing: 0.1em;
@@ -776,7 +798,7 @@ orange circle
     top: 50%;
     left: 20%;
     transform: translate(-50%, -50%);
-    background-color:#FFF5EE;
+    background-color: #DE5D83;
     width: 2vw;
     height: 2vw;
     border-radius: 50%;
@@ -786,7 +808,7 @@ orange circle
     top: 50%;
     left: 80%;
     transform: translate(-50%, -50%);
-    background-color:#FFF5EE;
+    background-color: #DE5D83;
     width: 2vw;
     height: 2vw;
     border-radius: 50%;
@@ -824,7 +846,7 @@ div {
 #ui .text {
     position: absolute;
     font-size: 8rem;
-    color:#FFF5EE;
+    color:#DE5D83; 
     line-height: 8rem;
     opacity: 0;
     font-family: 'Anton', sans-serif;
@@ -3285,7 +3307,7 @@ div {
     display: none !important;
 }
 
-@media screen and (max-width:400px){
+@media screen and (max-width:500px){
     .dotted_hide{
         transform: scale(2);
         top: 45%;
@@ -3302,6 +3324,12 @@ div {
         top: 46.1%;
         left: 36.6%;
     }
+
+    .name p a{
+        top: 75%;
+        font-size:25px;
+    }
+
 }  
 
 
