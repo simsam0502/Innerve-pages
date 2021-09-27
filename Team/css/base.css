@@ -150,8 +150,8 @@ main {
 	padding: 0;
 } */
 header {
-  z-index: 10000000;
-  
+  z-index: 15;
+  opacity: 0;
   transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 header .nav {
@@ -187,7 +187,7 @@ header .nav .toggle {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10;
+  z-index: 100;
   cursor: pointer;
 
 
@@ -238,7 +238,7 @@ header .nav nav {
   display: flex;
   flex-direction: row;
   opacity: 0;
-  z-index: 5;
+  z-index: 10;
   transition: opacity 0.5s ease;
 }
 header .nav nav .showcase {
@@ -287,7 +287,7 @@ header .nav nav .showcase .showcase-menu li {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  z-index: 1;
+  z-index: 1000;
   color: #380303;
 }
 header .nav nav .showcase .showcase-menu li img{
@@ -481,16 +481,39 @@ header .nav nav.open .showcase {
   -webkit-animation-name: slideInDown;
   animation-name: slideInDown;
 }
-
-.info {
-	margin: 0 0 0 1.25em;
-	color: var(--color-info);
+/* .fcontent {
+  position: relative;
+  flex: 1;
+  padding: 80px 40px 40px;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 }
+.fcontent p {
+  color: rgb(144, 238, 67);
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.1, 0.2, 0.3, 0.5);
+}
+.fcontent p a {
+  color: #fff;
+  box-shadow: 0 1px 0 0 #EF3340;
+  } */
 
-.patterns {
-  height: 30vh;
+/* media queries added */
+@media only screen and (max-width:1000px) {
+    
+  header .nav nav .showcase .showcase-container{
+      display: none;
+  }
+  header .nav nav .menu .main-menu{
+    z-index:1000;
+      width: 100vw;
+  }
   
 }
+
+
 
 svg text {
   font-family: Lora;
@@ -615,7 +638,7 @@ svg text {
 	margin: 0;
 	line-height: 1;
 	position: absolute;
-	z-index: 100;
+	
 }
 
 .box__title-inner {
@@ -691,10 +714,10 @@ svg text {
 	pointer-events: none;
 }
 
-.grid__item:hover .box__img:not(.box__img--original) {
+/* .grid__item:hover .box__img:not(.box__img--original) {
 	//filter: grayscale(0);
   
-}
+} */
 
 .box__shadow {
 	position: absolute;
@@ -735,7 +758,6 @@ svg text {
 	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 1000;
 	overflow: hidden;
 }
 
@@ -750,7 +772,6 @@ svg text {
 	left: 0;
 	background: #DE5D83;
 	position: absolute;
-	z-index: 100;
 	transform: translate3d(100%,0,0);
 }
 
@@ -912,7 +933,6 @@ svg text {
   }
   .teamcontent{
 	position: relative;
-		z-index: 1000;
     text-align: center;
     flex-direction: column;
 		height: auto;
@@ -943,7 +963,6 @@ svg text {
 
   .teamcontent{
 	position: relative;
-		z-index: 1000;
     text-align: center;
     flex-direction: column;
 		height: auto;
@@ -953,7 +972,6 @@ svg text {
   }
 	.content--fixed {
 		position: relative;
-		z-index: 1000;
 		display: block;
 		padding: 0.85em;
 	}
@@ -967,16 +985,7 @@ svg text {
 		padding-bottom: 0.25em;
 		text-align: center;
 	}
-	.info {
-		margin: 0;
-	}
-	.github {
-		display: block;
-		margin: 1em auto;
-	}
-	.codrops-links {
-		margin: 0;
-	}
+
 }
 
 /* Footer Css */
@@ -989,10 +998,12 @@ body-footer {
 } */
 
 @font-face {
-  font-family: 'Genericons';
-  src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/53819/genericons-regular-webfont.eot');
-  src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/53819/genericons-regular-webfont.woff') format('woff'),
-     url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/53819/genericons-regular-webfont.eot') format('truetype');
+  font-family: "Genericons";
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/53819/genericons-regular-webfont.eot");
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/53819/genericons-regular-webfont.woff")
+      format("woff"),
+    url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/53819/genericons-regular-webfont.eot")
+      format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -1018,15 +1029,22 @@ body-footer {
   *display: inline;
 }
 
-.container {
+
+/* .container {
   bottom: 0;
   margin-top: auto;
-  position: absolute;
+  position: fixed;
   width: 100vw;
   height: 15vh;
+ 
+} */
+.footer__desktop {
+  position: relative;
+  bottom: 0;
+  width: 100vw;
 }
 
-.accordion {
+ul.accordion {
   background: #DE5D83;
   width: 100%;
   min-width: 150px;
@@ -1174,22 +1192,17 @@ body-footer {
   display: none;
 }
 
-@media screen and (max-width :740px)
-
-
-{
-  .logo{
+@media screen and (max-width: 740px) {
+  .logo {
     height: 90px;
     margin-top: 25px;
     margin-left: -20px;
   }
   .logo:hover {
-    transform: scale(1.0); 
+    transform: scale(1);
   }
 
-
-
-  .container{
+ .container {
     display: none;
   }
 
@@ -1205,69 +1218,64 @@ body-footer {
     font-size: 40px;
   }
   .mobile-footer {
-    position: relative;
+    position: fixed;
     /* width: 100vw;
     height: 100vh; */
     display: flex;
     justify-content: center;
     align-items: center;
 
-
     bottom: 0;
-  margin-top: 20px;
-  position: absolute;
-  width: 100vw;
-  /* height: 15vh; */
-  
+    margin-top: 20px;
+    width: 100vw;
+    /* height: 15vh; */
   }
   .mobile-footer .notice {
-    display: none;
-    position: absolute;
+    bottom: 0;
+    margin-top: 20px;
+    width: 100vw;
+    /* height: 15vh; */
+  }
+  .mobile-footer .notice {
+    /* display: none; */
+    /* position: absolute; */
     top: 10px;
     left: -1000px;
     width: 500px;
     height: 30px;
     padding: 5px;
     text-align: center;
-    font-family: 'Shrikhand', cursive;
+    font-family: "Shrikhand", cursive;
     font-size: 22px;
     border: 3px solid black;
   }
-  .mobile-footer .content {
+  .mobile-footer .fcontent {
+    position: absolute;
     /* width: 50vw; */
     width: 100vw;
     /* height: 75px; */
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #DE5D83;
+    background: #de5d83;
     flex-wrap: wrap;
     position: fixed;
     margin-bottom: 80px;
   }
 
-  .content{
+  .fcontent {
     padding: 0%;
     height: 80px;
   }
 }
 
-/* @media screen and (max-width :410px){
+/* @media screen and (max-width :500px){
   .mobile-footer .content{
-    flex-direction: ;
+    flex-direction: column;
   }
 } */
 
-@media only screen and (max-width:1000px) {
-    
-  header .nav nav .showcase .showcase-container{
-      display: none;
-  }
-  header .nav nav .menu .main-menu{
-      width: 100vw;
-  }
-  
-}
+
 @media screen and (max-width: 1400px) {
  svg text{
     font-size: 110px;
@@ -1351,3 +1359,5 @@ body-footer {
   }
 
 }
+
+.box {z-index: -1;}
