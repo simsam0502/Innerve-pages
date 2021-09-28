@@ -1218,13 +1218,13 @@ ul.accordion {
     font-size: 40px;
   }
   .mobile-footer {
-    position: fixed;
+    position: relative;
     /* width: 100vw;
     height: 100vh; */
     display: flex;
     justify-content: center;
     align-items: center;
-
+    z-index:-1;
     bottom: 0;
     margin-top: 20px;
     width: 100vw;
@@ -1238,11 +1238,11 @@ ul.accordion {
   }
   .mobile-footer .notice {
     /* display: none; */
-    /* position: absolute; */
+     position: relative; 
     top: 10px;
     left: -1000px;
     width: 500px;
-    height: 30px;
+     height: 30px;
     padding: 5px;
     text-align: center;
     font-family: "Shrikhand", cursive;
@@ -1259,12 +1259,11 @@ ul.accordion {
     align-items: center;
     background: #de5d83;
     flex-wrap: wrap;
-    position: fixed;
     margin-bottom: 80px;
   }
 
   .fcontent {
-    padding: 0%;
+    /*padding: 0%;*/
     height: 80px;
   }
 }
